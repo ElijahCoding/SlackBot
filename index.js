@@ -80,3 +80,15 @@ function randomJoke() {
     yoMamaJoke();
   }
 }
+
+// Show Help Text
+function runHelp() {
+  const params = {
+    icon_emoji: ':question:'
+  };
+
+  bot.postMessageToChannel(
+    'general',
+    `Type @jokebot with either 'chucknorris', 'yomama' or 'random' to get a joke`,
+    params
+  );
