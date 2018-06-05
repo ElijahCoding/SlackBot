@@ -21,3 +21,26 @@ bot.on('start', function() {
 
 // Error Handler
 bot.on('error', (err) => console.log(err));
+
+
+// Message Handler
+bot.on('message', (data) => {
+  if (data.type !== 'message') {
+    return;
+  }
+
+  handleMessage(data.text);
+});
+
+// Response to Data
+function handleMessage(message) {
+  if (message.includes(' chucknorris')) {
+    chuckJoke();
+  } else if (message.includes(' yomama')) {
+    yoMamaJoke();
+  } else if (message.includes(' random')) {
+    randomJoke();
+  } else if (message.includes(' help')) {
+    runHelp();
+  }
+}
